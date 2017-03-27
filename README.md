@@ -30,7 +30,7 @@ import Animation exposing (..)
 import Time exposing (second)
 
 myAnim = animation 0 |> from 100 |> to 300 |> duration (4*second) |> delay (1*second)
-List.map (\t -> animate (t*second) myAnim) [0..6]
+List.range 1 6 |> List.map (\t -> animate (toFloat t * second) myAnim)
 -- [100, 100, 129.29, 200, 270.71, 300, 300]
 ````
 
